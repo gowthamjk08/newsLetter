@@ -1,0 +1,171 @@
+/* google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* CSS rest property */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: var(--DarkSlateGrey);
+}
+
+:root{
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    background-color: var(--CharcoalGrey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+} 
+
+main{
+    padding:20px 30px;
+    width:80%;
+    max-width: 900px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius:10px;
+    background-color: var(--White);
+}
+
+h1{
+    font-size:48px;
+}
+p{
+    word-spacing: 2px;
+    font-size: 18px;
+    margin: 20px 0 30px;    
+}
+
+li{
+    font-size: 16px;
+    list-style: none;
+    line-height: 1.5em;
+    padding:10px 0;
+    display: flex;
+    align-items: center;
+}
+li::before{
+    content: url(./assets/images/icon-list.svg);
+    padding: 5px 10px  0 0;
+}
+label{
+    font-size: 16px;
+    font-weight: bold;
+}
+h6{
+    display: none;
+    color: var(--Tomato);
+    font-size: 16px;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 10px;
+}
+input{
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid var(--Grey);
+    outline: none;
+    width: 100%;
+}
+button{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: none;
+    color: var(--White);
+    background-color: var(--DarkSlateGrey);
+    transition: all 300ms;
+    cursor: pointer;
+}
+button:hover{
+    background:linear-gradient(to right,hwb(4 60% 0%),var(--Tomato));
+    box-shadow:  5px 5px 20px hsl(4, 100%, 82%);
+}
+
+/* image section */
+
+.mobile-view{
+    display: none;
+}
+form img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* Subscribtion section ---------- */
+.success-container{
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--White);
+    img{
+        width: 50px;
+        margin:10px 0;
+    }
+    h1{
+        font-size: 34px;
+    }
+    p{
+        line-height:2em;
+    }
+    button{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:940px) {
+    main{
+        width: 90%;
+    }
+}
+@media  screen and (max-width:769px) {
+    main{
+        flex-direction: column;
+        max-width: 400px;
+        width: 100%;
+        padding: 0;
+        gap:0;
+    }   
+    .text-container{
+        padding: 20px 30px;
+    }
+    .img-container{
+        order: -1;
+        width: 100%;
+    }
+    .mobile-view{
+        display: block;
+        width: 100%;
+    }
+    .desktop-view{
+        display: none;
+    }
+}
+@media screen and (max-width:600px){
+    .success-container{
+        min-height: 100vh;
+        width:100%;
+        padding: 50px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
